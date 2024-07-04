@@ -5,63 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        @media screen and (max-width: 414px){
+             .nav-countainer{
+                 flex-direction: column;
+             }
+
+             .menu{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+             }
+
+             .icon-logo{
+                margin-bottom: 14px;
+             }
+
+             .slider{
+                width: 350px;
+             }
+
+             .profile-content{
+                display: flex;
+                flex-direction: column;
+             }
+             
+
+             .profile-items{
+                margin-bottom: 15px;
+             }
+
+             #portofolio{
+                height: 224px;
+             }
+
+             #Messegee{
+                height: 642px;
+             }
+
+             .cover{
+                display: flex;
+                flex-direction: column;
+             }
+
+             .messege{
+                display: flex;
+                flex-direction: column;
+             }
+        }
+
+        
+    </style>
 </head>
 <body>
     <!--Ini Header Nav-->
     <header class="nav-countainer">
-        <div class="icon-logo"></div>
-
-        <nav>
-            <a>HOME</a>
-            <a>OUR PORTOFOLIO</a>
-            <a>PORTOFOLIO</a>
-            <a>MESSEGE US</a>
-        </nav>
+        <div class="icon-logo">Chy.</div>
+            <nav class="menu">
+            <a href="#home" class="active">HOME</a>
+            <a href="#our-profile">MY PROJECT</a>
+            <a href="#portofolio">PORTOFOLIO</a>
+            <a href="#Messegee">MESSEGE US</a>
+            </nav>
     </header>
 
-    <hr  /> 
     <main>
         <!--Ini Home Content-->
-        <selection>
-            <header>
-                <h1>Hai User, Welcome to website</h1>
+        <section>
+            <header style="margin-bottom: 15px;">
+                <h1>Hai <span id="name">User</span>, Welcome to website</h1>
+                <script src="js/script.js"></script>
             </header>
 
             <article>
                 <p>Ini adalah website portofolio pertama saya</p>
-                <div class="banner-countainer"></div>
-            </article>
-        </selection>
+                <div class="banner-countainer">
+                    <div class="slider">
+                    <div class="slides">
+                        <!--radio button-->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
 
-    <hr  />
+                        <!--slide image-->
+                        <div class="slide first">
+                            <img src="assets/1_20240703_221252_0000.png">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/2_20240703_221252_0001.png">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/3_20240703_221252_0002.png">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/4_20240703_221252_0003.png">
+                        </div>
+
+                        <!--Automatic navigator-->
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+
+                    </div>
+
+                    <!--Manual navigator-->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+                </div>
+                </div>
+            </article>
+        </section>
+
+
         <!--Ini Our Profile Content-->
-        <selection>
+        <section id="our-profile" style="background: black;">
             <header>
-                <h1>Our Profile</h1>
+                <h1 style="margin-bottom: 15px;">MY PROJECT</h1>
             </header>
 
             <article class="profile-content">
                 <div class="profile-items">
-                    <div class="profile-icon"></div>
-                    <p>Profile 1</p>
+                    <div class="profile-icon profile-1"></div>
+                    <p>PROJECT 1</p>
+                    <p>project ini adalah rangkaian digital dalam membuat lampu jalan otomatis</p>
                 </div>
 
                 <div class="profile-items">
-                    <div class="profile-icon"></div>
-                    <p>Profile kedua</p>
+                    <div class="profile-icon profile-2"></div>
+                    <p>PROJECT 2</p>
+                    <p>project ini membuat website pelayanan dalam berbagai bidang untuk sang pacar</p>
                 </div>
 
-                <div class="profile-items">
-                    <div class="profile-icon"></div>
-                    <p>Profile ketiga</p>
-                </div>
+                <div class="divider"></div>
             </article>
-        </selection>
+        </section>
+
 
         <!--Ini Profile Content-->
+        <section id="portofolio">
+            <header style="margin-bottom: 15px;">
+                <h1>My Portofolio</h1>
+            </header>
+             
+            <article>
+                <div class="my-portofolio">
+                    <p>Perkenalkan nama saya Muhammad Cahyo Putra Ramadhan, saya 18 tahun, sekarang saya berprofesi sebagai mahasiswa di Politeknik Negeri Samarinda jurusan Teknologi Informasi Program Studi Teknik Komputer. Saya menguasai keterampilan teknis yaitu pemrograman, desain, dan debugging. Selain itu, saya juga memiliki keterampilan non-teknis, seperti komunikasi, kerja tim, dan kepemimpinan</p>
+                </div>
+            </article>
+
+        </section>
 
 
         <!--Ini Messege Us Content-->
+        <section id="Messegee" style="background: black;">
+            <div class="cover">
+                <h1>Messege Us</h1>
+            <article class="messege">
+            <div class="messege-us">
+                <form name="messege-form" onsubmit="return validateForm()">
+                    <table class="table-content">
+                    <!--Nama-->
+                    <tr>
+                        <td><label>Nama </label></td>
+                        <td><input placeholder="Nama" type="text" name="full-nama" required></td>
+                    </tr>
+
+                    <!--Tanggal lahir-->
+                    <tr>
+                        <td><label for="tanggal_lahir">Tanggal Lahir </label></td>
+                        <td><input type="date" name="birth-date" required></td>
+                    </tr>
+
+                    <!--Jenis kelamin-->
+                    <tr>
+                        <td><label for="jenis_kelamin">Jenis Kelamin </label></td>
+                        <td>
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Laki-laki</label>
+                            <input type="radio" id="female" name="gender" value="male" required>
+                            <label for="female">Perempuan</label>
+                        </td>
+                    </tr>
+
+                    <!--Pesan-->
+                    <tr>
+                        <td><label for="pesan" class="pesan-1">Pesan </label></td>
+                        <td><textarea placeholder="Pesan" name="messages" required></textarea></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><button type="submit" class="submit-btn">Submit</button></td>
+                    </tr>
+                    </table>
+                  </form>
+            </div>
+
+            <div class="hasil">
+                <p>Nama: <span id="sender-full-nama"></span></p>
+                <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
+                <p>Jenis Kelamin: <span id="sender-gender"></span></p>
+                <p>Pesan: <span id="sender-messages"></span></p>
+            </div>
+
+        </article>
+        </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <p>Created by cahyo</p>
+    </footer>
+
 </body>
 </html>
